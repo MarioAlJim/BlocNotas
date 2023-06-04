@@ -1,13 +1,14 @@
 package modelo.pojos;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Respuesta {
-
     private boolean error;
     private String mensaje;
-    private Usuario usuario;
-    private List<Usuario> lista;
     private SesionToken sesionToken;
+    private Usuario usuario;
+    private ArrayList<Libreta> libretas;
+    private ArrayList<Prioridad> prioridades;
+    private ArrayList<Nota> notas;
 
     public Respuesta() {
     }
@@ -33,22 +34,6 @@ public class Respuesta {
         this.mensaje = mensaje;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setEmpleado(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public List<Usuario> getLista() {
-        return lista;
-    }
-
-    public void setLista(List<Usuario> lista) {
-        this.lista = lista;
-    }
-
     public SesionToken getSesionToken() {
         return sesionToken;
     }
@@ -56,6 +41,36 @@ public class Respuesta {
     public void setSesionToken(SesionToken sesionToken) {
         this.sesionToken = sesionToken;
     }
-    
-    
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public ArrayList<Libreta> getLibretas() {
+        return libretas;
+    }
+
+    public void setLibretas(ArrayList<Libreta> libretas) {
+        this.libretas = libretas;
+    }
+
+    public ArrayList<Prioridad> getPrioridades() {
+        return prioridades;
+    }
+
+    public void setPrioridades(ArrayList<Prioridad> prioridades) {
+        this.prioridades = prioridades;
+    }
+
+    public ArrayList<Nota> getNotas() {
+        return notas;
+    }
+
+    public void setNotas(ArrayList<Nota> notas) {
+        this.notas = notas;
+    }
 }

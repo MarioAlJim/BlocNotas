@@ -16,6 +16,7 @@ public class Usuario {
     private Timestamp tiempo_activacion;
 
     public Usuario() {
+        usuario_id = 0;
     }
 
     public Usuario(int usuario_id, String nombres, String apellidos, Timestamp tiempo_registro, int activo, String celular, String contrasena, String ultimo_token_acceso, Timestamp tiempo_ultimo_acceso, String otp, Timestamp tiempo_activacion) {
@@ -128,3 +129,4 @@ public class Usuario {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+

@@ -16,6 +16,8 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(ws.AccesoWS.class);
         resources.add(ws.LibretaWS.class);
+        resources.add(ws.NotaWS.class);
+        resources.add(ws.PrioridadWS.class);
         resources.add(ws.UsuarioWS.class);
     }
     

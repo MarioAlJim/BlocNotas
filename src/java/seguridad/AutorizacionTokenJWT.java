@@ -17,10 +17,9 @@ import modelo.pojos.SesionToken;
 public class AutorizacionTokenJWT {
 
     public static SesionToken generarToken(SesionToken sesion) {
-        //-CARGAR CONFIGURACIÓN PARA LA GENERACIÓN DE TOKENS CON JWT DESDE EL ARCHIVO DE PROPERTIES----//
         ResourceBundle bundle = ResourceBundle.getBundle("seguridad.configuracionJWT");
         String SECRET_KEY = bundle.getString("SECRET_KEY");
-        Integer MINUTES_EXPIRATION_TIME = 10; //10 minutos por default
+        Integer MINUTES_EXPIRATION_TIME = 5;
         try {
             MINUTES_EXPIRATION_TIME = Integer.parseInt(bundle.getString("MINUTES_EXPIRATION_TIME"));
         } catch (Exception ex) {
@@ -31,18 +30,17 @@ public class AutorizacionTokenJWT {
         Date now = currentTime.getTime();
         currentTime.add(Calendar.MINUTE, MINUTES_EXPIRATION_TIME);
         Date EXPIRATION_TIME = currentTime.getTime();
-        //-------GENERAR EL TOKEN JWT------------------------------------//
         String token = Jwts.builder()
-                .setSubject(sesion.getNombre())
-                .setIssuer(sesion.getNombre())
+                .setSubject(sesion.getNombres())
+                .setIssuer(sesion.getNombres())
                 .setIssuedAt(now)
                 .setExpiration(EXPIRATION_TIME)
-                .claim("id", sesion.getId())
-                .claim("nombre", sesion.getNombre())
-                .claim("email", sesion.getEmail())
+                .claim("id", sesion.getUsuario_id())
+                .claim("nombre", sesion.getNombres())
+                .claim("celular", sesion.getCelular())
                 .signWith(SIGNATURE_ALGORITHM, SECRET_KEY)
                 .compact();
-        sesion.setTokenAcceso(token);
+        sesion.setTokenacceso(token);
         return sesion;
     }
 
@@ -62,9 +60,9 @@ public class AutorizacionTokenJWT {
                 Claims TOKEN_DESCIFRADO
                         = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
                 SesionToken sesion = new SesionToken();
-                sesion.setId((Integer) TOKEN_DESCIFRADO.get("id"));
-                sesion.setNombre((String) TOKEN_DESCIFRADO.get("nombre"));
-                sesion.setEmail((String) TOKEN_DESCIFRADO.get("email"));
+                sesion.setIdUsuario((Integer) TOKEN_DESCIFRADO.get("id"));
+                sesion.setNombres((String) TOKEN_DESCIFRADO.get("nombre"));
+                sesion.setCelular((String) TOKEN_DESCIFRADO.get("celular"));
                 r.setSesionToken(sesion);
                 r.setError(false);
                 r.setMensaje("OK");

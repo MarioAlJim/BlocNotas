@@ -1,7 +1,6 @@
 package modelo.pojos;
 
 import java.sql.*;
-import java.time.format.DateTimeFormatter;
 
 public class Nota {
       private int nota_id;
@@ -11,7 +10,7 @@ public class Nota {
       private int eliminado;
       private int usuario_id;
       private int libreta_id;
-      private int propiedad_id;
+      private int prioridad_id;
 
     public Nota(int nota_id, String titulo, String contenido, Timestamp tiempo_creacion, int eliminado, int usuario_id, int libreta_id, int propiedad_id) {
         this.nota_id = nota_id;
@@ -21,7 +20,7 @@ public class Nota {
         this.eliminado = eliminado;
         this.usuario_id = usuario_id;
         this.libreta_id = libreta_id;
-        this.propiedad_id = propiedad_id;
+        this.prioridad_id = propiedad_id;
     }
 
     public Nota() {
@@ -83,11 +82,11 @@ public class Nota {
         this.libreta_id = libreta_id;
     }
 
-    public int getPropiedad_id() {
-        return propiedad_id;
+    public int getPrioridad_id() {
+        return prioridad_id;
     }
 
-    public void setPropiedad_id(int propiedad_id) {
-        this.propiedad_id = propiedad_id;
+    public void setPrioridad_id(int prioridad_id) {
+        this.prioridad_id = prioridad_id;
     }
 }

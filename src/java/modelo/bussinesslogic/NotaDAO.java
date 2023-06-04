@@ -1,25 +1,30 @@
-package modelo.bussinesslogics;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package modelo.bussinesslogic;
 
-import dataaccesss.DataBaseConnection;
+import dataaccess.DataBaseConnection;
 import modelo.pojos.Nota;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class NotaDAO implements INotaDAO {
     @Override
-    public ArrayList<Nota> consultarNotas(int usuario_id, int libreta_id, int prioridad_id) throws SQLException {
+    public ArrayList<Nota> consultarNotas(int usuario_id, Integer libreta_id, Integer prioridad_id) throws SQLException {
         ArrayList<Nota> notas = new ArrayList<>();
         String query = "{CALL SPS_ObtenerNotas(?,?,?)}";
         DataBaseConnection dbc = new DataBaseConnection();
         Connection connection = dbc.getConnection();
         PreparedStatement callableStatement = connection.prepareStatement(query);
         callableStatement.setInt(1, usuario_id);
-        if(libreta_id == 0) {
+        if(libreta_id == null) {
             callableStatement.setNull(2, libreta_id);
         } else {
             callableStatement.setInt(2, libreta_id);
         }
-        if(prioridad_id == 2) {
+        if(prioridad_id == null) {
             callableStatement.setNull(3, prioridad_id);
         } else {
             callableStatement.setInt(3, prioridad_id);

@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "3966db98-dd70-4004-b46b-aab59bed4a81",
+		"name": "BlogNotas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26536574"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8084/WebServiceBlogNotas/api/bsc/acceso/registro Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "mario",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "jimenez",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "9671094441",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "majiji",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/bsc/acceso/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"bsc",
+						"acceso",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/WebServiceBlogNotas/api/bsc/acceso/registro Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6aBy2Y1AV6UAt7M2mC8I",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ApiBlogNotasWS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://TeamWolfApi.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "celular",
+							"value": "9671094441",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "majiji",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/bsc/acceso/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"bsc",
+						"acceso",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detele nota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpbyIsImlzcyI6Im1hcmlvIiwiaWF0IjoxNjg0NzMyODM3LCJleHAiOjE2ODQ3MzY0MzcsImlkIjoyLCJub21icmUiOiJtYXJpbyIsImNlbHVsYXIiOiI5NjcxMDk0NDQxIn0.kYjsa1okF0pMGSjEyZkQ3LcBt9kY60xmwpWsOyVaVhdxQqcZhAIyI9ovmIswIqwpLpUjrQ7xEAC1xgSdJjwTMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://midominio.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nota_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/nota/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"nota",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar notas 3 param",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6aBy2Y1AV6UAt7M2mC8I",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ApiBlogNotasWS",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://TeamWolfApi.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "mario",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "jimenez",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "9671094441",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "majiji",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/nota/consultar/1/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"nota",
+						"consultar",
+						"1",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar nota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpbyIsImlzcyI6Im1hcmlvIiwiaWF0IjoxNjg0NzMyODM3LCJleHAiOjE2ODQ3MzY0MzcsImlkIjoyLCJub21icmUiOiJtYXJpbyIsImNlbHVsYXIiOiI5NjcxMDk0NDQxIn0.kYjsa1okF0pMGSjEyZkQ3LcBt9kY60xmwpWsOyVaVhdxQqcZhAIyI9ovmIswIqwpLpUjrQ7xEAC1xgSdJjwTMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://midominio.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Terminar tarea de base de datos",
+							"type": "text"
+						},
+						{
+							"key": "contenido",
+							"value": "Terminar la tarea de funciones de bases de datos antes del viernes",
+							"type": "text"
+						},
+						{
+							"key": "usuario_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "libreta_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "prioridad_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/nota/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"nota",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar nota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpbyIsImlzcyI6Im1hcmlvIiwiaWF0IjoxNjg0NzMyODM3LCJleHAiOjE2ODQ3MzY0MzcsImlkIjoyLCJub21icmUiOiJtYXJpbyIsImNlbHVsYXIiOiI5NjcxMDk0NDQxIn0.kYjsa1okF0pMGSjEyZkQ3LcBt9kY60xmwpWsOyVaVhdxQqcZhAIyI9ovmIswIqwpLpUjrQ7xEAC1xgSdJjwTMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://midominio.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Tarea de base de datos",
+							"type": "text"
+						},
+						{
+							"key": "titulo_anterior",
+							"value": "Terminar tarea de base de datos",
+							"type": "text"
+						},
+						{
+							"key": "contenido",
+							"value": "Terminar la tarea de funciones de bases de datos antes del viernes",
+							"type": "text"
+						},
+						{
+							"key": "usuario_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "libreta_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "prioridad_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/nota/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"nota",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar nota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpbyIsImlzcyI6Im1hcmlvIiwiaWF0IjoxNjg0NzMyODM3LCJleHAiOjE2ODQ3MzY0MzcsImlkIjoyLCJub21icmUiOiJtYXJpbyIsImNlbHVsYXIiOiI5NjcxMDk0NDQxIn0.kYjsa1okF0pMGSjEyZkQ3LcBt9kY60xmwpWsOyVaVhdxQqcZhAIyI9ovmIswIqwpLpUjrQ7xEAC1xgSdJjwTMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://midominio.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/nota/consultar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"nota",
+						"consultar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar prioridad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJpbyIsImlzcyI6Im1hcmlvIiwiaWF0IjoxNjg0NzMyODM3LCJleHAiOjE2ODQ3MzY0MzcsImlkIjoyLCJub21icmUiOiJtYXJpbyIsImNlbHVsYXIiOiI5NjcxMDk0NDQxIn0.kYjsa1okF0pMGSjEyZkQ3LcBt9kY60xmwpWsOyVaVhdxQqcZhAIyI9ovmIswIqwpLpUjrQ7xEAC1xgSdJjwTMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://midominio.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/WebServiceBlogNotas/api/auth/prioridad/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"WebServiceBlogNotas",
+						"api",
+						"auth",
+						"prioridad",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

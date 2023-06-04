@@ -46,7 +46,7 @@ public class FiltroAuthBasica implements javax.servlet.Filter {
                     HttpServletResponse httpServletResponse = (HttpServletResponse) response;
                     httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     httpServletResponse.addHeader(HttpHeaders.CONTENT_TYPE, "text/html; charset=UTF-8");
-                    httpServletResponse.getWriter().write("<h1>401 NO AUTORIZADO</h1>");
+                    httpServletResponse.getWriter().write("<h1>401 NO AUTORIZADO B</h1>");
                 }
             }
         }

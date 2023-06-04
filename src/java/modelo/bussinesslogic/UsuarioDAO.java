@@ -1,12 +1,11 @@
-package modelo.bussinesslogics;
+package modelo.bussinesslogic;
 
-import dataaccesss.DataBaseConnection;
+import dataaccess.DataBaseConnection;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelo.pojos.Usuario;
-
 import static java.sql.Types.INTEGER;
 
 
@@ -91,3 +90,4 @@ public class UsuarioDAO implements IUsuarioDAO{
         return (affectedRows != 0);
     }
 }
+

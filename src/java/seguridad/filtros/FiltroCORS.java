@@ -31,7 +31,7 @@ public class FiltroCORS implements Filter{
             FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {
             HttpServletResponse customresponse = (HttpServletResponse) response;
-            String[] origins = {"https://midominio.com"};
+            String[] origins = {"https://TeamWolfApi.com", "https://midominio.com"};
             Set<String> allowedOrigins = new HashSet<String>(Arrays.asList(origins));
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             String originHeader = httpServletRequest.getHeader(ORIGIN_HEADER);
